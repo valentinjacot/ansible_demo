@@ -1,0 +1,11 @@
+- name: Start Program
+  hosts: your_target_host
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Change to the directory containing the program
+      become: yes
+      command: cd /path/to/program_directory
+
+    - name: Start the program
+      command: ./startprogram arg1 arg2
