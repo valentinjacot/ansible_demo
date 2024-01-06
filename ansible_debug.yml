@@ -1,0 +1,9 @@
+- name: Example Playbook with gather_facts
+  hosts: your_target_host
+  gather_facts: yes
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Display gathered facts
+      debug:
+        var: ansible_facts
