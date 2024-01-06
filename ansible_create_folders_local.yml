@@ -1,0 +1,21 @@
+- name: Create Folders and Change Ownership Locally
+  hosts: localhost
+  connection: local
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Create folder1
+      file:
+        path: /opt/folder1
+        state: directory
+        owner: app
+        group: app
+        mode: '0755'
+
+    - name: Create folder2
+      file:
+        path: /opt/folder2
+        state: directory
+        owner: app
+        group: app
+        mode: '0755'
